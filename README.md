@@ -2,7 +2,7 @@
 
 With `oauthProvider()` + `oauthDeviceAuthorization()` from `@better-auth/oauth-provider` and the Prisma adapter on PostgreSQL, a device authorization request that doesn't name a `resource` fails with a 500. The plugin writes `resources: null` to the `deviceCode` model, and Prisma rejects `null` for a scalar list column. The column is the `resources String[]` that Better Auth's own `npx auth generate` puts in the Prisma schema, so a project that follows the docs hits it on the first device login.
 
-Reported in [better-auth/better-auth#11933](https://github.com/better-auth/better-auth/issues/11933).
+Reported in [better-auth/better-auth#11933](https://github.com/better-auth/better-auth/issues/11933) ([reproduction comment](https://github.com/better-auth/better-auth/issues/11933#issuecomment-6785016847)).
 
 ## Reproduction
 
