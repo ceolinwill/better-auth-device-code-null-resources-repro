@@ -1,0 +1,28 @@
+{
+  "name": "better-auth-device-code-null-resources-repro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate-schema": "auth generate --config src/auth.ts --output prisma/schema.prisma --yes",
+    "repro": "prisma db push && prisma generate && tsx src/repro.ts"
+  },
+  "dependencies": {
+    "@better-auth/oauth-provider": "1.7.20",
+    "@better-auth/prisma-adapter": "1.7.20",
+    "@prisma/adapter-pg": "7.10.1",
+    "@prisma/client": "7.10.1",
+    "better-auth": "1.7.20"
+  },
+  "devDependencies": {
+    "auth": "1.7.20",
+    "prisma": "7.10.1",
+    "tsx": "4.23.15"
+  },
+  "allowScripts": {
+    "prisma@7.10.1": true,
+    "@prisma/engines@7.10.1": true,
+    "esbuild@0.28.2": true,
+    "fsevents": false
+  }
+}
